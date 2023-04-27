@@ -12,40 +12,32 @@ const LanguageDrawer = () => {
     setShowLanguages((current) => !current);
   };
 
-  // TODO: make it into a single function passing
-  // a parameter to set the language.
-  const changeLanguageEn = () => {
-    i18n.changeLanguage('en');
+  // Changes the language
+  const changeLanguage = (languageCode) => {
+    i18n.changeLanguage(languageCode);
   };
 
-  const changeLanguageBr = () => {
-    i18n.changeLanguage('pt_BR');
-  };
-
-  const changeLanguageEs = () => {
-    i18n.changeLanguage('es');
-  };
 
   // TODO: turn this view into a component
   // Set the current active language as bold?
   const LanguagesView = () => {
     return (
       <Styled.ContainerCustomButtons>
-        <Styled.ButtonLanguageContainer onPress={changeLanguageEn}>
+        <Styled.ButtonLanguageContainer onPress={() => changeLanguage('en')}>
           <Styled.ViewLanguageDrawerContainer>
             <Styled.TextLanguageDrawerContainer>
               English
             </Styled.TextLanguageDrawerContainer>
           </Styled.ViewLanguageDrawerContainer>
         </Styled.ButtonLanguageContainer>
-        <Styled.ButtonLanguageContainer onPress={changeLanguageEs}>
+        <Styled.ButtonLanguageContainer onPress={() => changeLanguage('es')}>
           <Styled.ViewLanguageDrawerContainer>
             <Styled.TextLanguageDrawerContainer>
               Español
             </Styled.TextLanguageDrawerContainer>
           </Styled.ViewLanguageDrawerContainer>
         </Styled.ButtonLanguageContainer>
-        <Styled.ButtonLanguageContainer onPress={changeLanguageBr}>
+        <Styled.ButtonLanguageContainer onPress={() => changeLanguage('pt_BR')}>
           <Styled.ViewLanguageDrawerContainer style={{ borderRadius: 8 }}>
             <Styled.TextLanguageDrawerContainer>
               Português
