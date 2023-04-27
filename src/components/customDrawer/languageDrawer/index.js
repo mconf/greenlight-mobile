@@ -18,8 +18,8 @@ const LanguageDrawer = () => {
   };
 
 
-  // TODO: turn this view into a component
-  // Set the current active language as bold?
+  // TODO: Turn this view into a component
+  // TODO: Set the current active language as bold?
   const LanguagesView = () => {
     return (
       <Styled.ContainerCustomButtons>
