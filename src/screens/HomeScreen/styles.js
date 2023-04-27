@@ -19,8 +19,8 @@ const Image = styled.Image`
 
 const Container = styled.View`
   position: relative;
-  top: 96px;
-  padding: 67px 20px 32px;
+  top: 40px;
+  padding: 27px 20px 20px;
   margin-bottom: 120px;
   justify-content: center;
   background-color: ${Colors.lightGray100};
@@ -48,7 +48,7 @@ const SwitchContainer = styled.View`
 `;
 
 const ButtonContainer = styled.View`
-  position: relative;
+  position: absolute;
   width: 100%;
   bottom: 0px;
   left: 0px;
