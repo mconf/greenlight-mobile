@@ -12,7 +12,7 @@ const CustomDrawer = (props) => {
     <Styled.ViewContainer>
       <DrawerContentScrollView
         {...props}
-        contentContainerStyle={{ backgroundColor: Colors.blue }}
+        contentContainerStyle={{ backgroundColor: Colors.primary }}
       >
         <ProfileDrawer />
         <Styled.ContainerDrawerItemList>

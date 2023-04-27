@@ -54,10 +54,10 @@ const DrawerNavigator = ({ onLeaveSession }) => {
         drawerInactiveBackgroundColor: Colors.lightGray100,
         drawerActiveTintColor: Colors.lightGray400,
         drawerInactiveTintColor: Colors.lightGray400,
-        headerStyle: { backgroundColor: Colors.blue },
+        headerStyle: { backgroundColor: Colors.primary },
         headerTitleContainerStyle: { maxWidth: '75%' },
         headerTintColor: Colors.white,
-        drawerBackgroundColor: Colors.blue,
+        drawerBackgroundColor: Colors.primary,
         headerTitleAlign: 'center',
         headerTitle: 'Greenlight'
       }}
