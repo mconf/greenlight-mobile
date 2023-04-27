@@ -5,6 +5,7 @@ import {
 import Colors from '../../constants/colors';
 import Styled from './styles';
 import BottomDrawer from './bottomDrawer';
+import LanguageDrawer from './languageDrawer';
 import ProfileDrawer from './profileDrawer';
 
 const CustomDrawer = (props) => {
@@ -17,6 +18,7 @@ const CustomDrawer = (props) => {
         <ProfileDrawer />
         <Styled.ContainerDrawerItemList>
           <DrawerItemList {...props} />
+          <LanguageDrawer />
         </Styled.ContainerDrawerItemList>
       </DrawerContentScrollView>
       <BottomDrawer />
