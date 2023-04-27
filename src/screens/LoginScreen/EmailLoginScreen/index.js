@@ -105,20 +105,12 @@ const LoginScreen = (props) => {
           />
         </Styled.InputView>
 
-        {loginError ? (
-          <Styled.InfoContainer style={{ justifyContent: 'space-between' }}>
-            <Styled.WrongCredentials>Email ou Senha errados</Styled.WrongCredentials>
-            <Styled.ForgotPassword onPress={handleForgotPwdButton}>
-              {t('screens.login.forgotPassword')}
-            </Styled.ForgotPassword>
-          </Styled.InfoContainer>
-        ) : (
-          <Styled.InfoContainer>
-            <Styled.ForgotPassword onPress={handleForgotPwdButton}>
-              {t('screens.login.forgotPassword')}
-            </Styled.ForgotPassword>
-          </Styled.InfoContainer>
-        )}
+        <Styled.InfoContainer style={{ justifyContent: loginError ? 'space-between' : 'flex-end' }}>
+          {loginError && <Styled.WrongCredentials>Email ou Senha errados</Styled.WrongCredentials>}
+          <Styled.ForgotPassword onPress={handleForgotPwdButton}>
+            {t('screens.login.forgotPassword')}
+          </Styled.ForgotPassword>
+        </Styled.InfoContainer>
 
         <Button
           variant="tertiary"

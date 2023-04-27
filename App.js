@@ -4,6 +4,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { useTranslation } from 'react-i18next';
 import { AuthContextProvider } from './src/store/context/auth-context';
+import DrawerNavigator from './src/components/customDrawer/drawerNavigator';
 
 // Screens
 import LoginScreen from './src/screens/LoginScreen';
@@ -61,7 +62,13 @@ const App = () => {
                 title: 'Login Email',
               }}
             />
-
+            <Stack.Screen
+              name="DrawerNavigator"
+              component={DrawerNavigator}
+              options={{
+                headerShown: false,
+              }}
+            />
           </Stack.Navigator>
         </AuthContextProvider>
       </NavigationContainer>

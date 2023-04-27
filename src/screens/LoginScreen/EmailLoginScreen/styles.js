@@ -14,7 +14,6 @@ const InputView = styled.View`
 
 const InfoContainer = styled.View`
   margin: 8px;
-  justify-content: flex-end;
   align-items: center;
   flex-flow: nowrap;
 `;
