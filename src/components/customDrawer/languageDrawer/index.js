@@ -17,7 +17,6 @@ const LanguageDrawer = () => {
     i18n.changeLanguage(languageCode);
   };
 
-
   // TODO: Turn this view into a component
   // TODO: Set the current active language as bold?
   const LanguagesView = () => {
@@ -48,7 +47,6 @@ const LanguageDrawer = () => {
     );
   };
 
-  // TODO: Fix drop down arrow leaving the container when in english
   const LanguageButton = () => {
     return (
       <Styled.ContainerCustomButtons>
