@@ -1,6 +1,7 @@
 import axios from 'axios';
-import Constants from 'expo-constants';
 import * as SecureStore from 'expo-secure-store';
+
+const API_URL="";
 
 const api = axios.create({
   headers: {
@@ -10,7 +11,7 @@ const api = axios.create({
 });
 
 api.interceptors.request.use(async (config) => {
-  const url = Constants.expoConfig.extra.apiUrl;
+  const url = API_URL;
   if (url) {
     config.baseURL = url;
   }

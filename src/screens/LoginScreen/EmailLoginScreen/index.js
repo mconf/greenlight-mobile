@@ -1,10 +1,9 @@
 import { useState, useContext } from 'react';
 import {
-  Linking, KeyboardAvoidingView, TouchableWithoutFeedback
+  Linking, TouchableWithoutFeedback
 } from 'react-native';
 import { TextInput as TIPaper } from 'react-native-paper';
 import { StatusBar } from 'expo-status-bar';
-import Constants from 'expo-constants';
 import { useTranslation } from 'react-i18next';
 import TextInput from '../../../components/TextInput';
 import Button from '../../../components/Button';
@@ -14,7 +13,6 @@ import { AuthContext } from '../../../store/context/auth-context';
 
 const LoginScreen = (props) => {
   const { navigation, route } = props;
-  const { platform } = Constants;
   const authCtx = useContext(AuthContext);
   const { t } = useTranslation();
 
@@ -75,69 +73,64 @@ const LoginScreen = (props) => {
   };
 
   return (
-    <KeyboardAvoidingView
-      behavior={platform.ios ? 'padding' : 'height'}
-      style={{ flex: 1 }}
-    >
-      <TouchableWithoutFeedback>
-        <Styled.Container>
-          <Styled.InputView>
-            <TextInput
-              label="Email"
-              keyboardType="email-address"
-              autoCorrect={false}
-              autoCapitalize="none"
-              onError={loginError}
-              value={inputValues.email}
-              onChangeText={onChangeInputHandler.bind(this, 'email')}
-            />
-          </Styled.InputView>
-          <Styled.InputView>
-            <TextInput
-              label={t('screens.login.password')}
-              secureTextEntry={!showPassword}
-              autoCorrect={false}
-              onError={loginError}
-              value={inputValues.password}
-              onChangeText={onChangeInputHandler.bind(this, 'password')}
-              right={(
-                <TIPaper.Icon
-                  name={!showPassword ? 'eye' : 'eye-off'}
-                  onPress={() => {
-                    setShowPassword((prevState) => !prevState);
-                  }}
-                />
-          )}
-            />
-          </Styled.InputView>
+    <TouchableWithoutFeedback>
+      <Styled.Container>
+        <Styled.InputView>
+          <TextInput
+            label="Email"
+            keyboardType="email-address"
+            autoCorrect={false}
+            autoCapitalize="none"
+            onError={loginError}
+            value={inputValues.email}
+            onChangeText={onChangeInputHandler.bind(this, 'email')}
+          />
+        </Styled.InputView>
+        <Styled.InputView>
+          <TextInput
+            label={t('screens.login.password')}
+            secureTextEntry={!showPassword}
+            autoCorrect={false}
+            onError={loginError}
+            value={inputValues.password}
+            onChangeText={onChangeInputHandler.bind(this, 'password')}
+            right={(
+              <TIPaper.Icon
+                name={!showPassword ? 'eye' : 'eye-off'}
+                onPress={() => {
+                  setShowPassword((prevState) => !prevState);
+                }}
+              />
+            )}
+          />
+        </Styled.InputView>
 
-          {loginError ? (
-            <Styled.InfoContainer style={{ justifyContent: 'space-between' }}>
-              <Styled.WrongCredentials>Email ou Senha errados</Styled.WrongCredentials>
-              <Styled.ForgotPassword onPress={handleForgotPwdButton}>
-                {t('screens.login.forgotPassword')}
-              </Styled.ForgotPassword>
-            </Styled.InfoContainer>
-          ) : (
-            <Styled.InfoContainer>
-              <Styled.ForgotPassword onPress={handleForgotPwdButton}>
-                {t('screens.login.forgotPassword')}
-              </Styled.ForgotPassword>
-            </Styled.InfoContainer>
-          )}
+        {loginError ? (
+          <Styled.InfoContainer style={{ justifyContent: 'space-between' }}>
+            <Styled.WrongCredentials>Email ou Senha errados</Styled.WrongCredentials>
+            <Styled.ForgotPassword onPress={handleForgotPwdButton}>
+              {t('screens.login.forgotPassword')}
+            </Styled.ForgotPassword>
+          </Styled.InfoContainer>
+        ) : (
+          <Styled.InfoContainer>
+            <Styled.ForgotPassword onPress={handleForgotPwdButton}>
+              {t('screens.login.forgotPassword')}
+            </Styled.ForgotPassword>
+          </Styled.InfoContainer>
+        )}
 
-          <Button
-            variant="tertiary"
-            onPress={signIn}
-            disabled={buttonLock}
-          >
-            {t('screens.login.login')}
-          </Button>
-          <StatusBar style="light" />
-        </Styled.Container>
+        <Button
+          variant="tertiary"
+          onPress={signIn}
+          disabled={buttonLock}
+        >
+          {t('screens.login.login')}
+        </Button>
+        <StatusBar style="light" />
+      </Styled.Container>
 
-      </TouchableWithoutFeedback>
-    </KeyboardAvoidingView>
+    </TouchableWithoutFeedback>
   );
 };
 

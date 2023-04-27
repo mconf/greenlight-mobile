@@ -25,7 +25,6 @@ const LoginScreen = (props) => {
   const [didLoad, setDidLoad] = useState(false);
 
   /* useEffects */
-
   // Back button handler
   useFocusEffect(
     useCallback(() => {
