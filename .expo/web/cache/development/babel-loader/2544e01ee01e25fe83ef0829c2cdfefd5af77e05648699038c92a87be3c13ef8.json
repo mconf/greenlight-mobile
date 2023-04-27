@@ -1,0 +1,1 @@
+{"ast":null,"code":"var Colors = {};\nexport default Colors;","map":{"version":3,"names":["Colors"],"sources":["/home/matheus/mconf/greenlight-mobile/src/constants/colors.js"],"sourcesContent":["const Colors = {\n\n};\n\nexport default Colors;\n\n"],"mappings":"AAAA,IAAMA,MAAM,GAAG,CAEf,CAAC;AAED,eAAeA,MAAM"},"metadata":{},"sourceType":"module","externalDependencies":[]}

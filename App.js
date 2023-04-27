@@ -1,20 +1,47 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { useTranslation } from 'react-i18next';
+import { AuthContextProvider } from './src/store/context/auth-context';
 
-export default function App() {
+// Screens
+import LoginScreen from './src/screens/LoginScreen';
+
+// Resources
+import Colors from './src/constants/colors';
+import './src/utils/i18n';
+
+const Stack = createNativeStackNavigator();
+
+const App = () => {
+  const { t } = useTranslation();
+
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
-}
+    <>
+      <NavigationContainer linking={linking}>
+        <AuthContextProvider>
+          <Stack.Navigator screenOptions={{
+            headerStyle: { backgroundColor: Colors.blue },
+            headerTintColor: Colors.white,
+            contentStyle: { backgroundColor: Colors.white },
+            headerTitleAlign: 'center',
+          }}
+          >
+            <Stack.Screen
+              name="LoginScreen"
+              component={LoginScreen}
+              options={{
+                title: 'Login',
+                headerShown: false,
+              }}
+            />
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+          </Stack.Navigator>
+        </AuthContextProvider>
+      </NavigationContainer>
+      <StatusBar style="auto" />
+    </>
+  );
+};
+
+export default App;
