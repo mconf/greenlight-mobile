@@ -9,6 +9,7 @@ import DrawerNavigator from './src/components/customDrawer/drawerNavigator';
 // Screens
 import LoginScreen from './src/screens/LoginScreen';
 import EmailLoginScreen from './src/screens/LoginScreen/EmailLoginScreen';
+import InsideConferenceScreen from './src/screens/InsideConferenceScreen';
 
 // Resources
 import Colors from './src/constants/colors';
@@ -66,6 +67,21 @@ const App = () => {
               name="DrawerNavigator"
               component={DrawerNavigator}
               options={{
+                headerShown: false,
+              }}
+            />
+            <Stack.Screen
+              name="InsideConferenceScreen"
+              component={InsideConferenceScreen}
+              options={{
+                title: t('app.insideMeeting'),
+                headerRight: () => (
+                  <IconButton
+                    icon="cog-outline"
+                    color="#FFFFFF"
+                    onPress={() => { }}
+                  />
+                ),
                 headerShown: false,
               }}
             />
