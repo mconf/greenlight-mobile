@@ -21,8 +21,9 @@ const InfoContainer = styled.View`
 
 const ForgotPassword = styled.Text`
   align-self: flex-end;
-  color: ${Colors.secondary}
+  color: ${Colors.lightGray400}
   text-decoration: underline;
+  text-decoration-color: ${Colors.lightGray400}
 `;
 
 const WrongCredentials = styled.Text`
