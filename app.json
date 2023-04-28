@@ -17,6 +17,14 @@
     ],
     "web": {
       "favicon": "./src/assets/favicon.png"
-    }
+    },
+    "android": {
+      "package": "org.bbb.greenlightmobile"
+    },
+    "plugins": [
+      "@config-plugins/react-native-webrtc",
+      "@notifee/react-native"
+    ],
+    "extra": { }
   }
 }
